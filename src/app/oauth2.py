@@ -1,9 +1,9 @@
 from jose import JWTError, jwt
 from sqlalchemy.orm import Session
 from datetime import datetime, timedelta, timezone
-from app import models
-from app.database import get_db
-from app.schema import TokenData
+from . import models
+from .database import get_db
+from .schema import TokenData
 from fastapi import Depends, status, HTTPException
 from fastapi.security import OAuth2PasswordBearer
 from .config import settings

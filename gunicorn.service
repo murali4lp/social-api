@@ -1,0 +1,14 @@
+[Unit]
+Description=social api application
+After=network.target
+
+[Service]
+User=murali
+Group=murali
+WorkingDirectory=/home/murali/app/src/
+Environment="PATH=/home/murali/app/venv/bin"
+EnvironmentFile=/home/murali/.env
+ExecStart=/home/murali/app/venv/bin/gunicorn -w 4 -k uvicorn.workers.UvicornWorker src.app.main:app --bind 0.0.0.0:8000
+
+[Install]
+WantedBy=multi-user.target

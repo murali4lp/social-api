@@ -5,3 +5,4 @@ passlib[bcrypt]
 python-jose[crytpography]
 pydantic-settings
 alembic
+pytest
